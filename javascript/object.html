@@ -14,7 +14,13 @@
             Course:"B.Tech",
             fee:128600
         }
-        document.write(student.name+"<br>"+student.Course+"<br>"+student.fee);
+        //stored in form of array
+        //2 arrays; one tells datatype, second tells values
+       // document.write(student.name+"<br>"+student.Course+"<br>"+student.fee);
+
+       for (let key in student) {
+        document.write(key+" : "+student[key]+"<br>");
+       }
     </script>
 </body>
 </html>
