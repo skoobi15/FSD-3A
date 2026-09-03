@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+
+<script>
+
+function login() {
+    let username = prompt("Enter username:");
+    let password = prompt("Enter password:");
+
+    if (username === "admin" && password === "1234") {
+        return "Login Successful!";
+    }
+}
+
+function displayMessage(clbk) {
+    const result = clbk();
+
+    if (result) {
+        console.log(result);
+    }
+}
+
+displayMessage(login);
+</script>
+
+</body>
+</html>
