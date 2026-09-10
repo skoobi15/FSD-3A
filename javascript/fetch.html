@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Shop</title>
+    <style>
+        table{
+            width:80%;
+            margin:auto;
+            padding:10px;
+            font-size: 25px;
+            color:darkcyan;
+            border: 2px solid darkcyan;
+        }
+    </style>
 </head>
 <body>
     <table>
@@ -16,12 +26,24 @@
                 <th>Price</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody id="data">
 
         </tbody>
     </table>
     <script>
-
+        const ele = document.getElementById("data");
+        const URL = "https://dummyjson.com/products";
+        async function loadData() {
+            try{
+                const res = await fetch(URL);
+                const data = await res.json();
+                console.log("DATA",data.products);
+            }
+            catch (err){
+                console.log("ERROR",err);
+            }
+        }
+        loadData();
     </script>
 </body>
 </html>
