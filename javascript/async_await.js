@@ -14,8 +14,13 @@
 
         }
        async function test() {
-        await f1();
-        await f2();
+        try{
+            await f1();
+            await f2();
+        }
+        catch (err) {
+            console.log("ERROR", err);
+        }
        }
        test();
     
