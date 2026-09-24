@@ -1,27 +1,43 @@
-import {BrowserRouter, Routes, Route, Link} from 'react-router-dom'
-function Home() {
-  return  <h1>This is my Home Page</h1>
-}
-function About() {
-  return <h1>This is my About Us page</h1>
-}
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import './App.css'
+import Navbar from './Components/Navbar'
+import Home from './Components/Home'
+import AboutUs from './Components/AboutUs'
+import Fee from './Components/Fee'
 
-const App = () => {
+function App() {
   return (
-    <div>
-      <BrowserRouter>
-      <nav>
-        <Link to="/">HOME </Link>
-        <Link to="/about">ABOUT US</Link>
-      </nav>
-      <Routes>
-        <Route path="/" element={<Home />}/>
-        <Route path="/about" element={<About />}/>
+    <BrowserRouter>
+      <div className="site-wrapper">
+        <Navbar />
 
-        
-      </Routes>
-      </BrowserRouter>
-    </div>
+        <main className="content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<AboutUs />} />
+            <Route path="/fee" element={<Fee />} />
+          </Routes>
+        </main>
+
+        <footer className="site-footer">
+          <div className="footer-inner">
+            <div className="footer-col">
+              <h3>Sunrise College</h3>
+              <p>Excellence in Education • Delhi, India</p>
+              <p>Phone: +91 98765 43210 | Email: info@sunrisecollege.edu.in</p>
+            </div>
+            <div className="footer-links">
+              <Link to="/">Home</Link>
+              <Link to="/about">About Us</Link>
+              <Link to="/fee">Fee Structure</Link>
+            </div>
+          </div>
+          <div className="footer-bottom">
+            <p>© 2026 Sunrise College. All Rights Reserved.</p>
+          </div>
+        </footer>
+      </div>
+    </BrowserRouter>
   )
 }
 
